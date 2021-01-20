@@ -1,0 +1,76 @@
+package com.mycompany.mavenproject124;
+
+import javafx.application.Application;
+import javafx.scene.control.*;
+import javafx.collections.*;
+
+/**
+ * JavaFX App
+ */
+public abstract class App extends Application {
+
+   
+private Label lb;
+private ComboBox<String> cb;
+private ObservableList<String> o1;
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+  
+   /* public void start(Stage stage) throws IOException {
+        scene = new Scene(loadFXML("primary"), 640, 480);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    static void setRoot(String fxml) throws IOException {
+        scene.setRoot(loadFXML(fxml));
+    }
+
+    private static Parent loadFXML(String fxml) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+        return fxmlLoader.load();
+    }
+
+    public static void main(String[] args) {
+        launch();
+    }
+public void start(Stage stage)throws Exception
+    {
+        lb = new Label("いらっしゃいませ");
+	cb = new ComboBox<>();
+       
+        ObservableList<String> o1 =
+		FXCollections.observableArrayList("乗用車",
+	"トラック", "オープンカー" ,"タクシー", "スポーツカー",
+	"ミニカー");
+
+     cb.setItems(o1);
+
+	BorderPane bp = new BorderPane();
+	bp.setTop(lb);
+        bp.setCenter(cb);
+
+      cb.setOnAction(new SampleEventHandler());
+	 Scene sc = new Scene(bp, 300, 200);
+	 stage.setScene(sc);
+	stage.setScene(sc);
+        
+        stage.setTitle("サンプル");
+        stage.show();
+    }
+	class SampleEventHandler implements
+            EventHandler<ActionEvent>
+          {
+         @Override
+	 public void handle(ActionEvent e)
+          {
+	
+
+	ComboBox tmp = (ComboBox) e.getSource();
+	String str = tmp.getValue().toString();
+	lb.setText(str + "ですね");
+ 
+}}}
